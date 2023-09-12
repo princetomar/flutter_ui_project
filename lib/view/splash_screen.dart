@@ -5,6 +5,8 @@ import 'package:scpenpro/appColors.dart';
 import 'package:scpenpro/navigation/navigationMethods.dart';
 import 'package:scpenpro/navigation/routeName.dart';
 
+import '../widgets/customElevatedButton.dart';
+
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
@@ -66,55 +68,21 @@ class SplashScreen extends StatelessWidget {
               height: 16,
             ),
             Center(
-              child: Container(
-                width: 319,
-                height: 55,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.purleButtonColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32),
-                    ),
-                  ),
-                  onPressed: () {
-                    NavigationMethods.nextScreenReplaceMent(
-                        context, RouteName.faceIDRecognitionScreen, []);
-                  },
-                  child: Text(
-                    "Get Started",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.buttonTextColor,
-                    ),
-                  ),
-                ),
+              child: CustomElevatedButton(
+                buttonTitle: "Get Started",
+                onTap: () {
+                  NavigationMethods.nextScreenReplaceMent(
+                      context, RouteName.faceIDRecognitionScreen, []);
+                },
               ),
             ),
             SizedBox(
               height: 16,
             ),
             Center(
-              child: Container(
-                width: 319,
-                height: 55,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.purleButtonColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "Join as admin",
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.buttonTextColor,
-                    ),
-                  ),
-                ),
+              child: CustomElevatedButton(
+                buttonTitle: "Join as admin",
+                onTap: () {},
               ),
             ),
           ],
