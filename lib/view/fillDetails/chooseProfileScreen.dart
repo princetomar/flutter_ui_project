@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:scpenpro/navigation/navigationMethods.dart';
+import 'package:scpenpro/navigation/routeName.dart';
 import '../../appColors.dart';
 import '../../widgets/customElevatedButton.dart';
 
@@ -110,6 +112,25 @@ class _ChooseProfileScreenState extends State<ChooseProfileScreen> {
                       buttonTitle: "Submit",
                       onTap: () {
                         if (userRole!.isNotEmpty) {
+                          if (userRole!.toLowerCase() == "student") {
+                            NavigationMethods.nextScreen(
+                              context,
+                              RouteName.studentRoleScreen,
+                              {},
+                            );
+                          } else if (userRole!.toLowerCase() == "parent") {
+                            NavigationMethods.nextScreen(
+                              context,
+                              RouteName.parentRoleScreen,
+                              {},
+                            );
+                          } else if (userRole!.toLowerCase() == "teacher") {
+                            NavigationMethods.nextScreen(
+                              context,
+                              RouteName.teacherRoleScreen,
+                              {},
+                            );
+                          }
                           print("User Role : $userRole");
                         } else {
                           showDialog(

@@ -3,6 +3,9 @@ import 'package:scpenpro/navigation/navigationMethods.dart';
 import 'package:scpenpro/navigation/routeName.dart';
 import 'package:scpenpro/view/faceRecognitionScreen.dart';
 import 'package:scpenpro/view/fillDetails/chooseProfileScreen.dart';
+import 'package:scpenpro/view/fillDetails/customUserRoleScreens/parentRoleScreen.dart';
+import 'package:scpenpro/view/fillDetails/customUserRoleScreens/studentRoleScreen.dart';
+import 'package:scpenpro/view/fillDetails/customUserRoleScreens/teacherRoleScreen.dart';
 import 'package:scpenpro/view/fillDetails/fillRegionScreen.dart';
 import 'package:scpenpro/view/fingerPrintScreen.dart';
 import 'package:scpenpro/view/loginScreen.dart';
@@ -27,6 +30,13 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => FillNameScreen());
       case RouteName.chooseProfileScreen:
         return MaterialPageRoute(builder: (context) => ChooseProfileScreen());
+      case RouteName.teacherRoleScreen:
+        return MaterialPageRoute(builder: (context) => TeacherRoleScreen());
+      case RouteName.parentRoleScreen:
+        return MaterialPageRoute(builder: (context) => ParentRoleScreen());
+      case RouteName.studentRoleScreen:
+        return MaterialPageRoute(builder: (context) => StudentRoleScreen());
+
       case RouteName.fillRegionScreen:
         return MaterialPageRoute(
             builder: (context) => FillRegionScreen(

@@ -8,4 +8,8 @@ class RouteName {
   static const String fillRegionScreen = "fillRegionScreen";
   static const String chooseProfileScreen = "chooseProfileScreen";
   static const String homeScreen = "homeScreen";
+
+  static const String teacherRoleScreen = "teacherRoleScreen";
+  static const String studentRoleScreen = "studentRoleScreen";
+  static const String parentRoleScreen = "parentRoleScreen";
 }
