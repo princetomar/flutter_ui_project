@@ -9,4 +9,5 @@ class AppColors {
   static const Color progressRemainingColor = Color(0xFFE8E8F0);
   static const Color textFormFieldColor = Color(0xFFE7D8F8);
   static const Color textFormFieldHintColor = Color(0xFFA9A9B1);
+  static const Color lightPurpleButtonColor = Color(0xFFE7D8F8);
 }
