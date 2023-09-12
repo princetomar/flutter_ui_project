@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:scpenpro/navigation/navigationMethods.dart';
+import 'package:scpenpro/navigation/routeName.dart';
 import '../../appColors.dart';
 import '../../widgets/customElevatedButton.dart';
 
@@ -42,9 +44,15 @@ class FillNameScreen extends StatelessWidget {
               height: size.height * 0.04,
             ),
             TextFormField(
+              controller: nameController,
               decoration: InputDecoration(
                 fillColor: AppColors.textFormFieldColor,
                 filled: true,
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(50.0),
+                  borderSide:
+                      BorderSide(width: 3, color: AppColors.purleButtonColor),
+                ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(50.0),
                   borderSide: BorderSide.none,
@@ -65,22 +73,11 @@ class FillNameScreen extends StatelessWidget {
                 buttonTitle: "Next",
                 onTap: () {
                   if (nameController.text.isNotEmpty) {
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: Text('Entered Value'),
-                          content: Text('You entered: ${nameController.text}'),
-                          actions: <Widget>[
-                            ElevatedButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: Text('Close'),
-                            ),
-                          ],
-                        );
-                      },
+                    final detail = {"name": "${nameController.text}"};
+                    NavigationMethods.nextScreen(
+                      context,
+                      RouteName.fillRegionScreen,
+                      detail,
                     );
                   } else {
                     showDialog(
